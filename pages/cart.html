@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Fungushead</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../images/logos/fungushead-favicon-coral.png">
+</head>
+<body class="cart-page">
+    <header id="site-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/logos/fungushead-logo-long-black.png" alt="Fungushead Logo">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <form action="shop.html" method="get">
+                            <input type="text" name="search" placeholder="Search products...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="user-actions">
+                        <a href="account.html" class="account-link"><i class="fas fa-user"></i> My Account</a>
+                        <a href="cart.html" class="cart-link active"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">Categories</a>
+                        <ul class="dropdown">
+                            <li><a href="category.html?category=spore-syringes">Spore Syringes</a></li>
+                            <li><a href="category.html?category=spore-prints">Spore Prints</a></li>
+                            <li><a href="category.html?category=spore-swabs">Spore Swabs</a></li>
+                            <li><a href="category.html?category=liquid-culture">Liquid Culture</a></li>
+                            <li><a href="category.html?category=mixpacks">Mix Packs</a></li>
+                            <li><a href="category.html?category=best-sellers">Best Sellers</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Title -->
+        <section class="page-title">
+            <div class="container">
+                <h1>Your Shopping Cart</h1>
+            </div>
+        </section>
+
+        <!-- Cart Content -->
+        <section class="cart-content">
+            <div class="container">
+                <div id="cart-empty" style="display: none;">
+                    <div class="empty-cart-message">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h2>Your cart is empty</h2>
+                        <p>Looks like you haven't added any products to your cart yet.</p>
+                        <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+                    </div>
+                </div>
+                <div id="cart-items-container">
+                    <div class="cart-table">
+                        <div class="cart-header">
+                            <div class="cart-product">Product</div>
+                            <div class="cart-price">Price</div>
+                            <div class="cart-quantity">Quantity</div>
+                            <div class="cart-subtotal">Subtotal</div>
+                            <div class="cart-remove"></div>
+                        </div>
+                        <div id="cart-items-list">
+                            <!-- Cart items will be loaded dynamically via JavaScript -->
+                            <div class="loading">Loading cart items...</div>
+                        </div>
+                    </div>
+                    <div class="cart-actions">
+                        <div class="coupon">
+                            <input type="text" id="coupon-code" placeholder="Coupon code">
+                            <button id="apply-coupon" class="btn btn-secondary">Apply Coupon</button>
+                        </div>
+                        <button id="update-cart" class="btn btn-secondary">Update Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Totals -->
+        <section class="cart-totals" id="cart-totals-section" style="display: none;">
+            <div class="container">
+                <div class="totals-wrapper">
+                    <h2>Cart Totals</h2>
+                    <div class="totals-table">
+                        <div class="totals-row">
+                            <div class="totals-label">Subtotal</div>
+                            <div class="totals-value" id="cart-subtotal">$0.00</div>
+                        </div>
+                        <div class="totals-row" id="discount-row" style="display: none;">
+                            <div class="totals-label">Discount</div>
+                            <div class="totals-value" id="cart-discount">-$0.00</div>
+                        </div>
+                        <div class="totals-row">
+                            <div class="totals-label">Shipping</div>
+                            <div class="totals-value" id="cart-shipping">$0.00</div>
+                        </div>
+                        <div class="totals-row total">
+                            <div class="totals-label">Total</div>
+                            <div class="totals-value" id="cart-total">$0.00</div>
+                        </div>
+                    </div>
+                    <a href="checkout.html" class="btn btn-primary checkout-btn">Proceed to Checkout</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- You May Also Like -->
+        <section class="you-may-like">
+            <div class="container">
+                <h2>You May Also Like</h2>
+                <div class="products-grid" id="recommended-products">
+                    <!-- Recommended products will be loaded dynamically -->
+                    <div class="loading">Loading recommendations...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Returns & Refunds</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Contact Us</h3>
+                    <p>Email: info@fungusheadshop.com</p>
+                    <div class="social-media">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Disclaimer</h3>
+                    <p>All products are sold for microscopy and research purposes only. Not for human consumption.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fungushead. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/cart-page.js"></script>
+</body>
+</html> 

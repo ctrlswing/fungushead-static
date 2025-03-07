@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Premium Magic Mushroom Spores Online | Fungushead!</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/logos/fungushead-favicon-coral.png">
+</head>
+<body class="home">
+    <header id="site-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logos/fungushead-logo-long-black.png" alt="Fungushead Logo">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <form action="pages/shop.html" method="get">
+                            <input type="text" name="search" placeholder="Search products...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="user-actions">
+                        <a href="pages/account.html" class="account-link"><i class="fas fa-user"></i> My Account</a>
+                        <a href="pages/cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/shop.html">Shop</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">Categories</a>
+                        <ul class="dropdown">
+                            <li><a href="pages/category.html?category=spore-syringes">Spore Syringes</a></li>
+                            <li><a href="pages/category.html?category=spore-prints">Spore Prints</a></li>
+                            <li><a href="pages/category.html?category=spore-swabs">Spore Swabs</a></li>
+                            <li><a href="pages/category.html?category=liquid-culture">Liquid Culture</a></li>
+                            <li><a href="pages/category.html?category=mixpacks">Mix Packs</a></li>
+                            <li><a href="pages/category.html?category=best-sellers">Best Sellers</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pages/blog.html">Blog</a></li>
+                    <li><a href="pages/about.html">About</a></li>
+                    <li><a href="pages/faq.html">FAQs</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Premium Mushroom Spores for Microscopy</h1>
+                    <p>Explore our collection of high-quality mushroom spores for research and educational purposes.</p>
+                    <a href="pages/shop.html" class="btn btn-primary">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <div class="container">
+                <h2>Featured Products</h2>
+                <div class="products-grid" id="featured-products-container">
+                    <!-- Products will be loaded dynamically via JavaScript -->
+                    <div class="loading">Loading products...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Sellers Section -->
+        <section class="best-sellers">
+            <div class="container">
+                <h2>Best Sellers</h2>
+                <div class="products-grid" id="best-sellers-container">
+                    <!-- Products will be loaded dynamically via JavaScript -->
+                    <div class="loading">Loading products...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educational Content Section -->
+        <section class="educational-content">
+            <div class="container">
+                <h2>Educational Resources</h2>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <img src="images/microscopy.jpg" alt="Microscopy">
+                        <h3>Microscopy Guides</h3>
+                        <p>Learn how to properly use your microscope for spore research.</p>
+                        <a href="pages/blog.html?category=microscopy" class="btn btn-secondary">Read More</a>
+                    </div>
+                    <div class="content-card">
+                        <img src="images/identification.jpg" alt="Identification">
+                        <h3>Identification Techniques</h3>
+                        <p>Discover methods for identifying different mushroom species.</p>
+                        <a href="pages/blog.html?category=identification" class="btn btn-secondary">Read More</a>
+                    </div>
+                    <div class="content-card">
+                        <img src="images/research.jpg" alt="Research">
+                        <h3>Research Papers</h3>
+                        <p>Access scientific papers on mycology and fungi research.</p>
+                        <a href="pages/blog.html?category=research" class="btn btn-secondary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Customers Say</h2>
+                <div class="testimonials-slider" id="testimonials-container">
+                    <!-- Testimonials will be loaded dynamically via JavaScript -->
+                    <div class="loading">Loading testimonials...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for the latest products, educational content, and special offers.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/shop.html">Shop</a></li>
+                        <li><a href="pages/blog.html">Blog</a></li>
+                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="pages/faq.html">FAQs</a></li>
+                        <li><a href="pages/shipping.html">Shipping Policy</a></li>
+                        <li><a href="pages/returns.html">Returns & Refunds</a></li>
+                        <li><a href="pages/terms.html">Terms & Conditions</a></li>
+                        <li><a href="pages/privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@fungusheadshop.com</p>
+                    <div class="social-media">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Disclaimer</h3>
+                    <p>All products are sold for microscopy and research purposes only. Not for human consumption.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fungushead. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded dynamically via JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0.00</span>
+            </div>
+            <a href="pages/cart.html" class="btn btn-secondary">View Cart</a>
+            <a href="pages/checkout.html" class="btn btn-primary">Checkout</a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html> 

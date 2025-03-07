@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psilocybin Mushroom Spore Bank | Fungushead Spore Syringes</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../images/logos/fungushead-favicon-coral.png">
+</head>
+<body class="shop-page">
+    <header id="site-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/logos/fungushead-logo-long-black.png" alt="Fungushead Logo">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <form action="shop.html" method="get">
+                            <input type="text" name="search" placeholder="Search products...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="user-actions">
+                        <a href="account.html" class="account-link"><i class="fas fa-user"></i> My Account</a>
+                        <a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">Categories</a>
+                        <ul class="dropdown">
+                            <li><a href="category.html?category=spore-syringes">Spore Syringes</a></li>
+                            <li><a href="category.html?category=spore-prints">Spore Prints</a></li>
+                            <li><a href="category.html?category=spore-swabs">Spore Swabs</a></li>
+                            <li><a href="category.html?category=liquid-culture">Liquid Culture</a></li>
+                            <li><a href="category.html?category=mixpacks">Mix Packs</a></li>
+                            <li><a href="category.html?category=best-sellers">Best Sellers</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Shop Banner -->
+        <section class="shop-banner">
+            <div class="container">
+                <h1>Shop Our Collection</h1>
+                <p>Explore our premium selection of mushroom spores for microscopy and research.</p>
+            </div>
+        </section>
+
+        <!-- Shop Content -->
+        <section class="shop-content">
+            <div class="container">
+                <div class="shop-grid">
+                    <!-- Sidebar with Filters -->
+                    <aside class="shop-sidebar">
+                        <div class="filter-section">
+                            <h3>Categories</h3>
+                            <ul class="category-filter">
+                                <li><a href="category.html?category=spore-syringes" data-category="spore-syringes">Spore Syringes</a></li>
+                                <li><a href="category.html?category=spore-prints" data-category="spore-prints">Spore Prints</a></li>
+                                <li><a href="category.html?category=spore-swabs" data-category="spore-swabs">Spore Swabs</a></li>
+                                <li><a href="category.html?category=liquid-culture" data-category="liquid-culture">Liquid Culture</a></li>
+                                <li><a href="category.html?category=mixpacks" data-category="mixpacks">Mix Packs</a></li>
+                                <li><a href="category.html?category=best-sellers" data-category="best-sellers">Best Sellers</a></li>
+                            </ul>
+                        </div>
+                        <div class="filter-section">
+                            <h3>Price Range</h3>
+                            <div class="price-filter">
+                                <input type="range" id="price-range" min="0" max="100" value="100">
+                                <div class="price-inputs">
+                                    <span>$0</span>
+                                    <span id="price-value">$100</span>
+                                </div>
+                                <button id="apply-price-filter" class="btn btn-secondary">Apply</button>
+                            </div>
+                        </div>
+                        <div class="filter-section">
+                            <h3>Sort By</h3>
+                            <select id="sort-products" class="sort-select">
+                                <option value="popularity">Popularity</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </div>
+                    </aside>
+
+                    <!-- Products Grid -->
+                    <div class="products-container">
+                        <div class="products-header">
+                            <h2>All Products</h2>
+                            <div class="products-count">Showing <span id="products-count">0</span> products</div>
+                        </div>
+                        <div class="products-grid" id="products-grid">
+                            <!-- Products will be loaded dynamically via JavaScript -->
+                            <div class="loading">Loading products...</div>
+                        </div>
+                        <div class="pagination" id="pagination">
+                            <!-- Pagination will be generated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Returns & Refunds</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Contact Us</h3>
+                    <p>Email: info@fungusheadshop.com</p>
+                    <div class="social-media">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Disclaimer</h3>
+                    <p>All products are sold for microscopy and research purposes only. Not for human consumption.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fungushead. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded dynamically via JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0.00</span>
+            </div>
+            <a href="cart.html" class="btn btn-secondary">View Cart</a>
+            <a href="checkout.html" class="btn btn-primary">Checkout</a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/shop.js"></script>
+</body>
+</html> 

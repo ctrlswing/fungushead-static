@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Fungushead</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../images/logos/fungushead-favicon-coral.png">
+</head>
+<body class="account-page">
+    <header id="site-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/logos/fungushead-logo-long-black.png" alt="Fungushead Logo">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <form action="shop.html" method="get">
+                            <input type="text" name="search" placeholder="Search products...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="user-actions">
+                        <a href="account.html" class="account-link active"><i class="fas fa-user"></i> My Account</a>
+                        <a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">Categories</a>
+                        <ul class="dropdown">
+                            <li><a href="category.html?category=spore-syringes">Spore Syringes</a></li>
+                            <li><a href="category.html?category=spore-prints">Spore Prints</a></li>
+                            <li><a href="category.html?category=spore-swabs">Spore Swabs</a></li>
+                            <li><a href="category.html?category=liquid-culture">Liquid Culture</a></li>
+                            <li><a href="category.html?category=mixpacks">Mix Packs</a></li>
+                            <li><a href="category.html?category=best-sellers">Best Sellers</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Title -->
+        <section class="page-title">
+            <div class="container">
+                <h1>My Account</h1>
+            </div>
+        </section>
+
+        <!-- Account Content -->
+        <section class="account-content">
+            <div class="container">
+                <!-- Login/Register Forms (shown when not logged in) -->
+                <div id="account-forms" class="account-forms">
+                    <div class="forms-container">
+                        <div class="form-tabs">
+                            <button class="form-tab active" data-tab="login">Login</button>
+                            <button class="form-tab" data-tab="register">Register</button>
+                        </div>
+                        
+                        <!-- Login Form -->
+                        <div class="form-content active" id="login-form-content">
+                            <form id="login-form" class="account-form">
+                                <div class="form-group">
+                                    <label for="login-username">Username or email address <span class="required">*</span></label>
+                                    <input type="text" id="login-username" name="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="login-password">Password <span class="required">*</span></label>
+                                    <input type="password" id="login-password" name="password" required>
+                                </div>
+                                <div class="form-group checkbox">
+                                    <input type="checkbox" id="remember-me" name="remember">
+                                    <label for="remember-me">Remember me</label>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Log In</button>
+                                </div>
+                                <div class="form-footer">
+                                    <a href="#" id="lost-password-link">Lost your password?</a>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Register Form -->
+                        <div class="form-content" id="register-form-content">
+                            <form id="register-form" class="account-form">
+                                <div class="form-group">
+                                    <label for="register-email">Email address <span class="required">*</span></label>
+                                    <input type="email" id="register-email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-password">Password <span class="required">*</span></label>
+                                    <input type="password" id="register-password" name="password" required>
+                                </div>
+                                <div class="form-group">
+                                    <p class="privacy-policy-text">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="privacy.html" target="_blank">privacy policy</a>.</p>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Lost Password Form -->
+                        <div class="form-content" id="lost-password-form-content">
+                            <form id="lost-password-form" class="account-form">
+                                <p>Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.</p>
+                                <div class="form-group">
+                                    <label for="lost-password-username">Username or email <span class="required">*</span></label>
+                                    <input type="text" id="lost-password-username" name="user_login" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Reset Password</button>
+                                </div>
+                                <div class="form-footer">
+                                    <a href="#" id="back-to-login-link">Back to login</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Account Dashboard (shown when logged in) -->
+                <div id="account-dashboard" class="account-dashboard" style="display: none;">
+                    <div class="dashboard-container">
+                        <div class="dashboard-sidebar">
+                            <ul class="dashboard-menu">
+                                <li class="active" data-section="dashboard"><a href="#dashboard">Dashboard</a></li>
+                                <li data-section="orders"><a href="#orders">Orders</a></li>
+                                <li data-section="addresses"><a href="#addresses">Addresses</a></li>
+                                <li data-section="account-details"><a href="#account-details">Account details</a></li>
+                                <li data-section="logout"><a href="#" id="logout-link">Logout</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="dashboard-content">
+                            <!-- Dashboard Section -->
+                            <div class="dashboard-section active" id="dashboard-section">
+                                <h2>Dashboard</h2>
+                                <p>Hello <span id="user-display-name">User</span> (not <span id="user-name">User</span>? <a href="#" id="dashboard-logout-link">Log out</a>)</p>
+                                <p>From your account dashboard you can view your <a href="#orders" class="dashboard-link" data-section="orders">recent orders</a>, manage your <a href="#addresses" class="dashboard-link" data-section="addresses">shipping and billing addresses</a>, and <a href="#account-details" class="dashboard-link" data-section="account-details">edit your password and account details</a>.</p>
+                            </div>
+                            
+                            <!-- Orders Section -->
+                            <div class="dashboard-section" id="orders-section">
+                                <h2>Orders</h2>
+                                <div id="orders-table-container">
+                                    <!-- Orders will be loaded dynamically -->
+                                    <div class="loading">Loading orders...</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Addresses Section -->
+                            <div class="dashboard-section" id="addresses-section">
+                                <h2>Addresses</h2>
+                                <p>The following addresses will be used on the checkout page by default.</p>
+                                
+                                <div class="addresses-container">
+                                    <div class="address-column">
+                                        <div class="address-header">
+                                            <h3>Billing address</h3>
+                                            <a href="#" class="edit-address" data-type="billing">Edit</a>
+                                        </div>
+                                        <div class="address-content" id="billing-address">
+                                            <!-- Billing address will be loaded dynamically -->
+                                            <p>You have not set up this type of address yet.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="address-column">
+                                        <div class="address-header">
+                                            <h3>Shipping address</h3>
+                                            <a href="#" class="edit-address" data-type="shipping">Edit</a>
+                                        </div>
+                                        <div class="address-content" id="shipping-address">
+                                            <!-- Shipping address will be loaded dynamically -->
+                                            <p>You have not set up this type of address yet.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Account Details Section -->
+                            <div class="dashboard-section" id="account-details-section">
+                                <h2>Account details</h2>
+                                <form id="account-details-form" class="account-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="account-first-name">First name <span class="required">*</span></label>
+                                            <input type="text" id="account-first-name" name="first_name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="account-last-name">Last name <span class="required">*</span></label>
+                                            <input type="text" id="account-last-name" name="last_name" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="account-display-name">Display name <span class="required">*</span></label>
+                                        <input type="text" id="account-display-name" name="display_name" required>
+                                        <span class="form-hint">This will be how your name will be displayed in the account section and in reviews</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="account-email">Email address <span class="required">*</span></label>
+                                        <input type="email" id="account-email" name="email" required>
+                                    </div>
+                                    
+                                    <fieldset class="password-change">
+                                        <legend>Password change</legend>
+                                        <div class="form-group">
+                                            <label for="account-current-password">Current password (leave blank to leave unchanged)</label>
+                                            <input type="password" id="account-current-password" name="current_password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="account-new-password">New password (leave blank to leave unchanged)</label>
+                                            <input type="password" id="account-new-password" name="new_password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="account-confirm-password">Confirm new password</label>
+                                            <input type="password" id="account-confirm-password" name="confirm_password">
+                                        </div>
+                                    </fieldset>
+                                    
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Returns & Refunds</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Contact Us</h3>
+                    <p>Email: info@fungusheadshop.com</p>
+                    <div class="social-media">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
+                    </div>
+                    <h3>Disclaimer</h3>
+                    <p>All products are sold for microscopy and research purposes only. Not for human consumption.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fungushead. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded dynamically via JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0.00</span>
+            </div>
+            <a href="cart.html" class="btn btn-secondary">View Cart</a>
+            <a href="checkout.html" class="btn btn-primary">Checkout</a>
+        </div>
+    </div>
+
+    <!-- Address Edit Modal -->
+    <div class="modal" id="address-edit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit <span id="address-type-title">Address</span></h3>
+                <button class="close-modal" id="close-address-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="address-edit-form" class="account-form">
+                    <input type="hidden" id="address-type" name="address_type" value="billing">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address-first-name">First name <span class="required">*</span></label>
+                            <input type="text" id="address-first-name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address-last-name">Last name <span class="required">*</span></label>
+                            <input type="text" id="address-last-name" name="last_name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address-company">Company name (optional)</label>
+                        <input type="text" id="address-company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="address-country">Country / Region <span class="required">*</span></label>
+                        <select id="address-country" name="country" required>
+                            <option value="">Select a country / region</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="GB">United Kingdom</option>
+                            <!-- More countries will be added dynamically -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="address-address-1">Street address <span class="required">*</span></label>
+                        <input type="text" id="address-address-1" name="address_1" placeholder="House number and street name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="address-address-2" name="address_2" placeholder="Apartment, suite, unit, etc. (optional)">
+                    </div>
+                    <div class="form-group">
+                        <label for="address-city">City <span class="required">*</span></label>
+                        <input type="text" id="address-city" name="city" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address-state">State <span class="required">*</span></label>
+                            <select id="address-state" name="state" required>
+                                <option value="">Select a state</option>
+                                <!-- States will be added dynamically based on country -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="address-postcode">ZIP Code <span class="required">*</span></label>
+                            <input type="text" id="address-postcode" name="postcode" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address-phone">Phone <span class="required">*</span></label>
+                        <input type="tel" id="address-phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Save Address</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/account.js"></script>
+</body>
+</html> 
