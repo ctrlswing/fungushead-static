@@ -9,26 +9,11 @@
     <link rel="stylesheet" href="../css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="../images/logos/fungushead-favicon-coral.png">
+    <script src="../js/includes.js" defer></script>
 </head>
 <body class="checkout-page">
-    <header id="site-header">
-        <div class="container">
-            <div class="header-top">
-                <div class="logo">
-                    <a href="../index.html">
-                        <img src="../images/logos/fungushead-logo-long-black.png" alt="Fungushead Logo">
-                    </a>
-                </div>
-                <div class="header-right">
-                    <div class="user-actions">
-                        <a href="account.html" class="account-link"><i class="fas fa-user"></i> My Account</a>
-                        <a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
+    <!-- Header will be inserted here -->
+    <div id="header-include"></div>
     <main>
         <!-- Checkout Progress -->
         <section class="checkout-progress">
@@ -240,65 +225,15 @@
         </section>
     </main>
 
-    <footer id="site-footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
-                    </div>
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
-                    </div>
-                    <h3>Customer Service</h3>
-                    <ul>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="shipping.html">Shipping Policy</a></li>
-                        <li><a href="returns.html">Returns & Refunds</a></li>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
-                    </div>
-                    <h3>Contact Us</h3>
-                    <p>Email: info@fungusheadshop.com</p>
-                    <div class="social-media">
-                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
-                    </div>
-                    <h3>Disclaimer</h3>
-                    <p>All products are sold for microscopy and research purposes only. Not for human consumption.</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Fungushead. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
+<!-- Footer Include -->
+    <div id="footer-include"></div>
     <script src="../js/config.js"></script>
     <script src="../js/api.js"></script>
+    <script>
+        // Load footer component
+        document.addEventListener('DOMContentLoaded', function() {
+        });
+    </script>
     <script src="../js/cart.js"></script>
     <script src="../js/checkout.js"></script>
 </body>

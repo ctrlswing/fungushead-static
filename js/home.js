@@ -20,6 +20,61 @@ const HomePage = {
         
         // Initialize newsletter form
         this.initNewsletterForm();
+
+        // Initialize mobile menu
+        this.initMobileMenu();
+    },
+    
+    /**
+     * Initialize mobile menu functionality
+     */
+    initMobileMenu: function() {
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mainNavigation = document.getElementById('main-navigation');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        
+        // Toggle menu on hamburger icon click
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent event from bubbling up
+                mainNavigation.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+            });
+        }
+        
+        // Close menu on X button click
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent event from bubbling up
+                mainNavigation.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            });
+        }
+        
+        // Close menu when clicking the overlay
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', function() {
+                mainNavigation.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+        
+        // Handle clicks on menu items
+        const menuItems = mainNavigation.querySelectorAll('a');
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Only close menu on mobile
+                if (window.innerWidth <= 768) {
+                    mainNavigation.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
     },
     
     /**
@@ -329,7 +384,41 @@ const HomePage = {
     }
 };
 
-// Initialize home page when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+// Function to ensure consistent header across all pages
+function initializeHeader() {
+    // Mobile menu toggle functionality
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mainNavigation = document.getElementById('main-navigation');
+    
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mainNavigation.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function() {
+            mainNavigation.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+    
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', function() {
+            mainNavigation.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+}
+
+// Initialize header on all pages
+document.addEventListener('DOMContentLoaded', function() {
+    initializeHeader();
     HomePage.init();
 }); 

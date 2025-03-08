@@ -9,53 +9,11 @@
     <link rel="stylesheet" href="../css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="../images/logos/fungushead-favicon-coral.png">
+    <script src="../js/includes.js" defer></script>
 </head>
 <body class="account-page">
-    <header id="site-header">
-        <div class="container">
-            <div class="header-top">
-                <div class="logo">
-                    <a href="../index.html">
-                        <img src="../images/logos/fungushead-logo-long-black.png" alt="Fungushead Logo">
-                    </a>
-                </div>
-                <div class="header-right">
-                    <div class="search-bar">
-                        <form action="shop.html" method="get">
-                            <input type="text" name="search" placeholder="Search products...">
-                            <button type="submit"><i class="fas fa-search"></i></button>
-                        </form>
-                    </div>
-                    <div class="user-actions">
-                        <a href="account.html" class="account-link active"><i class="fas fa-user"></i> My Account</a>
-                        <a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
-                    </div>
-                </div>
-            </div>
-            <nav class="main-navigation">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li class="has-dropdown">
-                        <a href="#">Categories</a>
-                        <ul class="dropdown">
-                            <li><a href="category.html?category=spore-syringes">Spore Syringes</a></li>
-                            <li><a href="category.html?category=spore-prints">Spore Prints</a></li>
-                            <li><a href="category.html?category=spore-swabs">Spore Swabs</a></li>
-                            <li><a href="category.html?category=liquid-culture">Liquid Culture</a></li>
-                            <li><a href="category.html?category=mixpacks">Mix Packs</a></li>
-                            <li><a href="category.html?category=best-sellers">Best Sellers</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="faq.html">FAQs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
+    <!-- Header will be inserted here -->
+    <div id="header-include"></div>
     <main>
         <!-- Page Title -->
         <section class="page-title">
@@ -250,154 +208,15 @@
         </section>
     </main>
 
-    <footer id="site-footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
-                    </div>
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
-                    </div>
-                    <h3>Customer Service</h3>
-                    <ul>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="shipping.html">Shipping Policy</a></li>
-                        <li><a href="returns.html">Returns & Refunds</a></li>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
-                    </div>
-                    <h3>Contact Us</h3>
-                    <p>Email: info@fungusheadshop.com</p>
-                    <div class="social-media">
-                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="../images/logos/fungushead-logo-long-white.png" alt="Fungushead Logo" width="200">
-                    </div>
-                    <h3>Disclaimer</h3>
-                    <p>All products are sold for microscopy and research purposes only. Not for human consumption.</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Fungushead. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Cart Sidebar -->
-    <div class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <!-- Cart items will be loaded dynamically via JavaScript -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cart-total-amount">$0.00</span>
-            </div>
-            <a href="cart.html" class="btn btn-secondary">View Cart</a>
-            <a href="checkout.html" class="btn btn-primary">Checkout</a>
-        </div>
-    </div>
-
-    <!-- Address Edit Modal -->
-    <div class="modal" id="address-edit-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Edit <span id="address-type-title">Address</span></h3>
-                <button class="close-modal" id="close-address-modal"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="modal-body">
-                <form id="address-edit-form" class="account-form">
-                    <input type="hidden" id="address-type" name="address_type" value="billing">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="address-first-name">First name <span class="required">*</span></label>
-                            <input type="text" id="address-first-name" name="first_name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="address-last-name">Last name <span class="required">*</span></label>
-                            <input type="text" id="address-last-name" name="last_name" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="address-company">Company name (optional)</label>
-                        <input type="text" id="address-company" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="address-country">Country / Region <span class="required">*</span></label>
-                        <select id="address-country" name="country" required>
-                            <option value="">Select a country / region</option>
-                            <option value="US">United States</option>
-                            <option value="CA">Canada</option>
-                            <option value="GB">United Kingdom</option>
-                            <!-- More countries will be added dynamically -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="address-address-1">Street address <span class="required">*</span></label>
-                        <input type="text" id="address-address-1" name="address_1" placeholder="House number and street name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="address-address-2" name="address_2" placeholder="Apartment, suite, unit, etc. (optional)">
-                    </div>
-                    <div class="form-group">
-                        <label for="address-city">City <span class="required">*</span></label>
-                        <input type="text" id="address-city" name="city" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="address-state">State <span class="required">*</span></label>
-                            <select id="address-state" name="state" required>
-                                <option value="">Select a state</option>
-                                <!-- States will be added dynamically based on country -->
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="address-postcode">ZIP Code <span class="required">*</span></label>
-                            <input type="text" id="address-postcode" name="postcode" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="address-phone">Phone <span class="required">*</span></label>
-                        <input type="tel" id="address-phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Save Address</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
+<!-- Footer Include -->
+    <div id="footer-include"></div>
     <script src="../js/config.js"></script>
     <script src="../js/api.js"></script>
+    <script>
+        // Load footer component
+        document.addEventListener('DOMContentLoaded', function() {
+        });
+    </script>
     <script src="../js/cart.js"></script>
     <script src="../js/account.js"></script>
 </body>
